@@ -1,0 +1,10 @@
+#login-root-container {
+  display: flex;
+  flex-direction: column;
+  .wallpaper-container {
+    flex: 1;
+    img {
+      width: 100%;
+    }
+  }
+}
