@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function HttpClient() {
-  return axios.create({
+    return axios.create({
     baseURL: process.env.REACT_APP_API_BASE_URL,
     headers: {
 	Authorization: localStorage.getItem('bxpokemon:userToken'),
@@ -9,4 +9,4 @@ function HttpClient() {
   });
 }
 
-export default HttpClient();
+export default HttpClient;

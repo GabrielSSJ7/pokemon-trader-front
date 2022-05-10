@@ -1,0 +1,82 @@
+.pokemon-container {
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+  border-radius: 0.5rem;
+  border: 5px solid #f48c39;
+  background-color: #FFD78C;
+  display: grid;
+  grid-template-rows: 125px 240px 95px;
+
+  .trainer {
+    background-color: #f48c39;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 5px 0;
+  }
+
+  .open-to-sell {
+    background-color: tomato;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 5px 0;
+    transition: .3s;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  .pokemon-image {
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    img {
+      padding: 1rem;
+      width: 100%;
+      max-width: 150px;
+      margin: 0 auto;
+    }
+  }
+
+  .name {
+    display: flex;
+    justify-content: space-between;
+    color: #b97b00;
+  }
+
+  .pokemon-name {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  .sell-trainer-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .poke-stats-container {
+    margin-top: 15px;
+    justify-content: end;
+    display: flex;
+    flex-direction: column;
+    .poke-stats {
+      display: flex;
+      justify-content: space-between;
+      color: #0cbf00;
+    }
+  }
+
+}

@@ -1,0 +1,28 @@
+#wallet-container {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  margin-top: 10px;
+  max-height: 20vh;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 95%;
+  margin-left: 2.5%;
+  background-color: #91C483;
+  color: white;
+
+  .header {
+    text-transform: uppercase;
+    text-align: center;
+    color: #0B4619;
+  }
+
+  .content {
+    .info {
+      color: #b97b00;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+    }
+  }
+}

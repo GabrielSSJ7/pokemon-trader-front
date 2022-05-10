@@ -12,6 +12,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Unauthorized from "./pages/unauthorized";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import Profile from "./pages/profile";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
 	  <Route path="/" element={
 	    <PrivateRoute>
 	      <Home />
+	    </PrivateRoute>
+	  } />
+	  <Route path="/user/profile" element={
+	    <PrivateRoute>
+	      <Profile />
 	    </PrivateRoute>
 	  } />
 	  <Route path="/login" element={<Login/>} />

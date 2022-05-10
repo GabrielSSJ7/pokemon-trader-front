@@ -1,6 +1,7 @@
 import HttpClient from "./http_client";
 
 function Authentication() {
+  const httpClient = HttpClient();
   const isUserAuthenticated = () => {
     const token = getUserToken();
     if (token) {
@@ -14,20 +15,33 @@ function Authentication() {
     return localStorage.getItem("bxpokemon:userToken");
   };
 
-  const setUserToken = (token) => {
-    localStorage.setItem("bxpokemon:userToken", token);
+  const getUserData = () => {
+    return {
+      token: getUserToken(),
+      username: localStorage.getItem("bxpokemon:username"),
+    }
+  }
+
+  const setUserToken = (data) => {
+    localStorage.setItem("bxpokemon:userToken", data.token);
+    localStorage.setItem("bxpokemon:username", data.username);
+  }
+
+  const logout = () => {
+    localStorage.removeItem("bxpokemon:userToken");
+    localStorage.removeItem("bxpokemon:username");
   }
 
   const login = async (username, password) => {
-    const response = await HttpClient.post("/auth/login", {
+    const response = await httpClient.post("/auth/login", {
       username,
       password
     });
-    setUserToken(response.data.token);
+    setUserToken(response.data);
   };
 
   const register = async (username, password, name) => {
-    const response = await HttpClient.post("/users", {
+    const response = await httpClient.post("/users", {
       username,
       password,
       name
@@ -38,9 +52,11 @@ function Authentication() {
   return {
     isUserAuthenticated,
     getUserToken,
+    getUserData,
     login,
+    logout,
     register
   }
 }
 
-export default Authentication();
+export default Authentication;

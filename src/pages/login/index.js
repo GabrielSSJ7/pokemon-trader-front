@@ -24,13 +24,14 @@ function Login() {
 }
 
 function FormLogin() {
+  const auth = Auth();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Auth.login(username, password).then(() => {
+    auth.login(username, password).then(() => {
       toast.success("Autenticado com sucesso!");
       navigate("/");
     }).catch((e) => {
@@ -58,6 +59,7 @@ function FormLogin() {
 
 
 function FormRegister() {
+  const auth = Auth();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
@@ -70,7 +72,7 @@ function FormRegister() {
       toast.error("As senhas não conferem!");
       return;
     }
-    Auth.register(username, password, name).then(() => {
+    auth.register(username, password, name).then(() => {
       toast.success("Usuário criado com sucesso!");
       setTimeout(() => {
 	window.location.reload();

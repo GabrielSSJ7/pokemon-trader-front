@@ -1,8 +1,16 @@
+import React, {useState, useEffect} from 'react';
+
+import LoggedArea from '../../templates/logged_area';
+import PokemonList from '../../components/pokemon/list';
+import Pokemon from '../../utils/pokemon';
+
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <LoggedArea>
+      <div id="home-container">
+	<PokemonList />
+      </div>
+    </LoggedArea>
   );
 }
 

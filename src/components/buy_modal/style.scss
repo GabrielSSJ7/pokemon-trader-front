@@ -1,0 +1,24 @@
+#buy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .buy-header {
+    h1 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .buy-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 200px;
+    button {
+      margin-top: 1rem;
+    }
+  }
+}
+
